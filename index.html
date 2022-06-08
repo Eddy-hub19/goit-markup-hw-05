@@ -66,7 +66,7 @@
             Эффективные решения<br />
             для вашего бизнеса
           </h1>
-          <button class="banner-btn" type="button">Заказать услугу</button>
+          <button class="banner-btn" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <!-- features  -->
@@ -131,13 +131,18 @@
           <h2 class="about-title">Чем мы занимаемся</h2>
           <ul class="about-list">
             <li class="about-list-item">
+              <div class="about-wrap">
               <a href="#">
                 <img
                   width="370"
                   src="./images/make-website.jpg"
                   alt="make up a website"
                 />
+                <p class="about-list-descr">
+                  Десктопные приложения
+                </p>
               </a>
+            </div>
             </li>
             <li class="about-list-item">
               <a href="#">
@@ -452,6 +457,15 @@
         </div>
       </div>
     </footer>
+
+    <!-- Pop Up  -->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close" data-modal-close>X</button>
+      </div>
+    </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>

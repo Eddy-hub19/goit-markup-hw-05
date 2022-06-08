@@ -127,9 +127,9 @@ img {
 .list-link:after {
     content: '';
     position: absolute;
-    top: 28px;
+    top: 43px;
     left: 0;
-    width: 78px;
+    width: 100%;
     height: 4px;
 }
 
@@ -295,26 +295,37 @@ section h2 {
     margin-right: 30px;
 }
 
-.about-list-item{
+/* .about-list-item{
+    position: relative;
+} */
+
+.about-wrap{
     position: relative;
 }
 
-.about-list-item::before {
-    content: 'Десктопные приложения';
+.about-wrap::before {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 70px; 
     background: rgba(47, 48, 58, 0.8);
     opacity: 0;
 }
 
-.about-list-item:hover::before{
+.about-list-descr{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about-wrap:hover::before{
     opacity: 1;
 }
 
@@ -670,4 +681,53 @@ address {
     letter-spacing: 0.03em;
     color: var(--links-color);
     margin-top: 4px;
+}
+
+/* Pop Up  */
+
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(11, 11, 11, 0.345);
+    transition: opacity 300ms, visibility 300ms;
+}
+
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.modal{
+    min-width: 500px;
+    min-height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: translate 300ms;
+}
+
+.modal-close{
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #999999;
+    border-radius: 50%;
+    border-color: transparent;
+}
+
+.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.no-scroll{
+    overflow: hidden;
 }
