@@ -157,7 +157,7 @@ img {
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    transition: var(--transition-fill);
+    transition: var(--transition-fill), var(--transition-color);
 }
 
 .header-icon {
@@ -221,6 +221,7 @@ section h2 {
     border: none;
     transition: var(--transition-bg);
 }
+
 /* ✓ */
 .banner-btn:hover,
 .banner-btn:focus {
@@ -302,7 +303,7 @@ section h2 {
     position: relative;
 }
 
-.about-list-descr{
+.about-list-descr {
     position: absolute;
     bottom: 0;
     font-weight: 700;
@@ -382,6 +383,7 @@ section h2 {
 .team-soc-item:not(:last-child) {
     margin-right: 10px;
 }
+
 /* ✓ */
 .team-soc-item .team-soc-link:hover {
     fill: var(--white-color);
@@ -479,10 +481,10 @@ address {
 }
 
 .footer-link {
-    color: rgba(255, 255, 255, 0.6);   
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-link, .footer-list-item>a{
+.footer-link, .footer-list-item>a {
     transition: var(--transition-color);
 }
 
@@ -524,21 +526,13 @@ address {
     align-items: center;
 }
 
-.footer-soc-item {
-    fill: white;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: var(--transition-bg);
-}
-
 .footer-soc-item:not(:last-child) {
     margin-right: 10px;
 }
 
-.footer-soc-item:hover,
-.footer-soc-item :focus {
+.footer-soc-link:hover,
+.footer-soc-link :focus {
     background: var(--accent-color);
-    border-radius: 50%;
 }
 
 .footer-soc-link {
@@ -547,6 +541,10 @@ address {
     display: flex;
     align-items: center;
     justify-content: center;
+    fill: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition-bg);
 }
 
 /* portfolio */
@@ -578,8 +576,7 @@ address {
     letter-spacing: 0.03em;
     border-radius: 4px;
     border: none;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition: var(--transition-color),var(--transition-bg),box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-color), var(--transition-bg), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-list-btn:hover,
@@ -622,7 +619,7 @@ address {
     overflow: hidden;
 }
 
-.store-wrapper-descr{
+.store-wrapper-descr {
     position: absolute;
     transform: translateY(300px);
     top: 0;
@@ -639,7 +636,8 @@ address {
     
 }
 
-.store-item:hover .store-wrapper-descr {
+.store-wrapper-link:hover .store-wrapper-descr,
+.store-wrapper-link:focus .store-wrapper-descr {
     transform: translateY(0);
 }
 
@@ -683,11 +681,11 @@ address {
     transition: opacity 300ms, visibility 300ms;
 }
 
-.backdrop.is-hidden .modal{
+.backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.modal{
+.modal {
     min-width: 500px;
     min-height: 600px;
     background-color: white;
@@ -699,7 +697,7 @@ address {
     transition: transform 250ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 
-.modal-close{
+.modal-close {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -715,18 +713,18 @@ address {
     cursor: pointer;
 }
 
-.modal-close:hover{
+.modal-close:hover {
     background-color: #9999;
     fill: white;
 }
 
-.is-hidden{
+.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
 
-.no-scroll{
+.no-scroll {
     width: 100%;
     height: 100%;
     overflow: hidden;
