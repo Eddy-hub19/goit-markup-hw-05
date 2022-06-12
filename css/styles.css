@@ -9,6 +9,7 @@
     --transition-bg: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-border: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -84,6 +85,7 @@ img {
 .header-top {
     display: flex;
     align-items: center;
+    transition: var(--transition-fill), var(--transition-color);
 }
 
 .header-top span {
@@ -135,9 +137,12 @@ img {
     top: 44px;
 }
 
+.list-link {
+    transition: var(--transition-color);
+}
+
 .list-link:hover::after {
     background: var(--accent-color);
-    border-radius: 2px;
 }
 
 .header-links {
@@ -222,7 +227,6 @@ section h2 {
     transition: var(--transition-bg);
 }
 
-/* ✓ */
 .banner-btn:hover,
 .banner-btn:focus {
     background: #188CE8;
@@ -384,8 +388,9 @@ section h2 {
     margin-right: 10px;
 }
 
-/* ✓ */
-.team-soc-item .team-soc-link:hover {
+
+.team-soc-item .team-soc-link:hover,
+.team-soc-item .team-soc-link:focus {
     fill: var(--white-color);
     background: var(--accent-color);
 }
@@ -427,7 +432,7 @@ section h2 {
     border: 1px solid #afb1b8;
     border-radius: 4px;
     fill: var(--social-link-fill);
-    transition: var(--transition-fill);
+    transition: var(--transition-fill), var(--transition-border);
 }
 
 .client-list-link:hover,
@@ -530,11 +535,6 @@ address {
     margin-right: 10px;
 }
 
-.footer-soc-link:hover,
-.footer-soc-link :focus {
-    background: var(--accent-color);
-}
-
 .footer-soc-link {
     width: 44px;
     height: 44px;
@@ -545,6 +545,11 @@ address {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: var(--transition-bg);
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+    background: var(--accent-color);
 }
 
 /* portfolio */
@@ -632,17 +637,13 @@ address {
     height: 100%;
     padding: 64px 24px;
     background: var(--accent-color);
-    transition: var(--transition-transform);
+    transition: var(--transition-transform), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
 .store-wrapper-link:hover .store-wrapper-descr,
 .store-wrapper-link:focus .store-wrapper-descr {
     transform: translateY(0);
-}
-
-.store-item:hover,
-.store-item:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
